@@ -1,4 +1,5 @@
 'use client';
+import {useSound} from 'use-sound';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -20,11 +21,21 @@ const Display = () =>{
 		})
 
 	}
+
+
+	const finished = () =>{
+
+
+		   let audio = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_9b106fb911.mp3")
+                        audio.play();
+		
+	}
 	if(running){
 
 		const intervalId = setTimeout(()=>{
 			switch (true) {
   case time.milliseconds === 0 && time.seconds === 0 && time.minutes === 0 && time.hours === 0:
+					finished();
     // Timer has reached 00:00:00:00
     console.log('Timer reached 00:00:00:00');
     break;
