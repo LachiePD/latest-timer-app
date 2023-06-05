@@ -1,13 +1,9 @@
 'use client';
 import TimerButton from './TimerButton';
 import Display from './Display.jsx';
-import {useContext} from 'react';
-import Fab from '@mui/material/Fab';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import PauseIcon from '@mui/icons-material/Pause';
 import Box from '@mui/material/Box';
 import {TimeContext} from './TimerContext';
-export default function Home() {
+ const Home =()=> {
 
 
 	return (
@@ -17,3 +13,4 @@ export default function Home() {
 	  </Box>
   )
 }
+export default Home

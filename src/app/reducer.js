@@ -1,3 +1,5 @@
+'use client';
+
 export const timeReducer = (time, action) =>{
 	switch(action.type){
 		case"decrement":{

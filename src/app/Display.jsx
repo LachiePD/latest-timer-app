@@ -1,5 +1,4 @@
 'use client';
-import {useSound} from 'use-sound';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -66,12 +65,13 @@ const Display = () =>{
 	},10)
 	
 }
-	const interactiveGrid = Object.keys(time).map(chrono =>{
+	const interactiveGrid = Object.keys(time).map((chrono, index) =>{
 
 		if(chrono === 'milliseconds'){return}
 		return(
 			<InteractiveGridItem handleChange={handleChange}
-			chronometry={chrono}/>
+			chronometry={chrono}
+			key={index}/>
 		)
 	})
 
@@ -111,7 +111,8 @@ const InteractiveDisplay = ({children}) =>{
 const InteractiveGridItem = ({chronometry, handleChange})=>{
 
 	return(
-		<Grid xs={4} sx={{display:'flex', alignItems:'center'}}>
+		<Grid item={true} xs={4} sx={{display:'flex', alignItems:'center'}}>
+		
 		<TextField sx={{width:'80%'}} label={chronometry} type="number" onChange={(e)=>handleChange(chronometry, e.target.value)} id='outlined-number'/>
 		</Grid>
 	)
