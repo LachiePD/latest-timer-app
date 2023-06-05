@@ -33,36 +33,31 @@ const Display = () =>{
 
 		const intervalId = setTimeout(()=>{
 			switch (true) {
-  case time.milliseconds === 0 && time.seconds === 0 && time.minutes === 0 && time.hours === 0:
+  case time.seconds === 0 && time.minutes === 0 && time.hours === 0:
 					finished();
     // Timer has reached 00:00:00:00
     console.log('Timer reached 00:00:00:00');
     break;
 
-  case time.milliseconds === 0 && time.seconds === 0 && time.minutes === 0:
+  case time.seconds === 0 && time.minutes === 0:
     // Timer reached 00:00:00, decrement hours
     timeDispatch({ type: 'decrement', chronometry: 'hours' });
 					timeDispatch({value:'setTime', chronometry:'minutes', value:'59'});
     break;
 
-  case time.milliseconds === 0 && time.seconds === 0:
+  case time.seconds === 0:
     // Timer reached 00:00, decrement minutes
     timeDispatch({ type: 'decrement', chronometry: 'minutes' });
 					timeDispatch({type:'setTime', chronometry:'seconds', value:'59'});
     break;
 
-  case time.milliseconds === 0:
-    // Timer reached 00, decrement seconds
-    timeDispatch({ type: 'decrement', chronometry: 'seconds' });
-					timeDispatch({type:'setTime', chronometry:'milliseconds', value:'99'});
-    break;
 
   default:
     // Timer is still running, continue decrementing milliseconds
-    timeDispatch({ type: 'decrement', chronometry: 'milliseconds' });
+    timeDispatch({ type: 'decrement', chronometry: 'seconds' });
     break;
 }
-	},10)
+	},1000)
 	
 }
 	const interactiveGrid = Object.keys(time).map((chrono, index) =>{

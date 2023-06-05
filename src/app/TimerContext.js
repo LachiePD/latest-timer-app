@@ -8,7 +8,7 @@ export const TimeContext = createContext(null);
 
 
 const  AppContext = ({children})=>{
-	const [time, timeDispatch] = useReducer(timeReducer, {hours:0, minutes:0, seconds:0, milliseconds:0});
+	const [time, timeDispatch] = useReducer(timeReducer, {hours:0, minutes:0, seconds:0, });
 	const [running, runningDispatch] = useReducer(runningReducer, false);
 
 	return(
