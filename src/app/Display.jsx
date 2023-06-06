@@ -27,7 +27,7 @@ const Display = () =>{
 
 		   let audio = new Audio("https://cdn.pixabay.com/audio/2022/03/15/audio_9b106fb911.mp3")
                         audio.play();
-		
+			runningDispatch({value:'toggle'});	
 	}
 	if(running){
 
